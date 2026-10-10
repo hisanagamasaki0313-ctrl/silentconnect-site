@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Silent Connect | 言葉じゃなくて、心でつながる国際交流</title>
+<meta name="description" content="日本語も英語も、いりません。ジェスチャーと笑顔でつながる2時間。Silent Connectは、言語の壁を越えた非言語型国際交流プログラム。主催：SilentConnect。">
+<meta property="og:title" content="Silent Connect | 言葉は要らない国際交流">
+<meta property="og:description" content="2026.12.27 / 都内 / ¥1,000 — 初めての人も大歓迎。">
+<meta property="og:site_name" content="SilentConnect">
+<meta name="author" content="SilentConnect">
+<style>
+  :root {
+    --ink: #0a0a0a;
+    --ink-soft: #2b2b2b;
+    --bg: #f6f3ec;
+    --card: #ffffff;
+    --yellow: #fde047;
+    --pink: #ff5cae;
+    --blue: #2563eb;
+    --lime: #c2f04d;
+    --orange: #ff6a2b;
+    --violet: #7c3aed;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Inter", "Noto Sans JP", sans-serif;
+    color: var(--ink); background: var(--bg); line-height: 1.6;
+    overflow-x: hidden;
+  }
+  a { text-decoration: none; color: inherit; }
+  img { max-width: 100%; display: block; }
+
+  /* ===== Marquee ===== */
+  .marquee {
+    background: var(--ink); color: var(--yellow);
+    padding: 8px 0; overflow: hidden; border-bottom: 2px solid var(--ink);
+  }
+  .marquee-track {
+    display: inline-block; white-space: nowrap; animation: scroll 22s linear infinite;
+    font-weight: 800; letter-spacing: .08em; font-size: .82rem;
+  }
+  .marquee-track span { padding: 0 24px; }
+  .marquee-track span::before { content: "✦"; color: var(--pink); margin-right: 12px; }
+  @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+  /* ===== Header ===== */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(246,243,236,.85); backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--ink);
+  }
+  .header-inner {
+    max-width: 1200px; margin: 0 auto; padding: 14px 20px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo { font-size: 1.3rem; font-weight: 900; letter-spacing: -.02em; }
+  .logo span { background: var(--yellow); padding: 0 6px; }
+  nav ul { display: flex; gap: 22px; list-style: none; font-size: .88rem; font-weight: 700; }
+  nav a:hover { background: var(--yellow); padding: 2px 8px; border-radius: 6px; }
+  @media (max-width: 700px) { nav ul { display: none; } }
+
+  /* ===== Hero ===== */
+  .hero {
+    padding: 70px 20px 40px; position: relative; max-width: 1200px; margin: 0 auto;
+  }
+  .hero-tag {
+    display: inline-block; background: var(--ink); color: #fff;
+    padding: 6px 14px; border-radius: 999px; font-size: .75rem;
+    font-weight: 800; letter-spacing: .12em;
+  }
+  .hero h1 {
+    font-size: clamp(2.6rem, 9vw, 5.8rem);
+    font-weight: 900; line-height: 1.0; letter-spacing: -.04em;
+    margin-top: 22px;
+  }
+  .hero h1 .s1 { color: var(--ink); }
+  .hero h1 .s2 { background: var(--yellow); padding: 0 12px; transform: rotate(-2deg); display: inline-block; }
+  .hero h1 .s3 { color: var(--pink); }
+  .hero p { margin-top: 22px; font-size: clamp(1rem, 2.5vw, 1.2rem); max-width: 560px; font-weight: 600; }
+  .hero p mark { background: var(--lime); padding: 0 6px; font-weight: 800; }
+  .hero-meta {
+    margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .hero-meta .chip {
+    background: var(--card); border: 2px solid var(--ink);
+    padding: 6px 14px; border-radius: 999px; font-weight: 800; font-size: .82rem;
+  }
+  .hero-meta .chip.pink { background: var(--pink); color: #fff; }
+  .hero-meta .chip.lime { background: var(--lime); }
+
+  .hero-cta {
+    margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ink); color: #fff;
+    font-weight: 800; padding: 14px 26px; border-radius: 14px;
+    transition: transform .15s, background .15s;
+    border: 2px solid var(--ink);
+    box-shadow: 4px 4px 0 var(--yellow);
+  }
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--yellow); }
+  .btn:active { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--yellow); }
+  .btn.alt {
+    background: var(--card); color: var(--ink); box-shadow: 4px 4px 0 var(--pink);
+  }
+  .btn.alt:hover { box-shadow: 6px 6px 0 var(--pink); }
+  .btn .arrow { font-weight: 900; }
+
+  /* ===== Editorial pick cards ===== */
+  .reels {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    padding: 40px 20px; max-width: 1200px; margin: 0 auto;
+  }
+  @media (max-width: 880px) { .reels { grid-template-columns: 1fr; gap: 14px; padding: 24px 20px; } }
+  .reel {
+    position: relative; overflow: hidden;
+    background: var(--card); border: 2px solid var(--ink);
+    border-radius: 18px; padding: 32px 28px 28px;
+    min-height: 320px; display: flex; flex-direction: column;
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .reel:hover { transform: translateY(-3px); box-shadow: 6px 6px 0 var(--ink); }
+  .reel::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 8px; background: var(--ink);
+  }
+  .reel.r1::before { background: var(--yellow); }
+  .reel.r2::before { background: var(--pink); }
+  .reel.r3::before { background: var(--lime); }
+  .reel .top-row {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 22px;
+  }
+  .reel .top-label {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: .78rem; font-weight: 700; letter-spacing: .25em;
+    color: var(--ink); text-transform: uppercase;
+    border-bottom: 1px solid var(--ink); padding-bottom: 4px;
+  }
+  .reel .badge {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: .68rem; font-weight: 700; letter-spacing: .2em;
+    color: var(--ink); text-transform: uppercase;
+    border: 1px solid var(--ink); padding: 3px 8px; border-radius: 2px;
+    background: transparent;
+  }
+  .reel .badge.live { background: var(--ink); color: var(--yellow); border-color: var(--ink); }
+  .reel .badge.new  { background: var(--pink);  color: #fff; border-color: var(--ink); }
+  .reel .num {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: clamp(4rem, 9vw, 6.5rem); font-weight: 400;
+    color: var(--ink); line-height: 1; letter-spacing: -.04em;
+    margin-bottom: 6px;
+  }
+  .reel h3 {
+    font-family: "Hiragino Mincho ProN", "Shippori Mincho", "Yu Mincho", "Georgia", serif;
+    font-size: clamp(1.25rem, 2.6vw, 1.55rem);
+    font-weight: 700; line-height: 1.45; letter-spacing: -.01em;
+    color: var(--ink);
+  }
+  .reel p {
+    font-size: .88rem; font-weight: 600; line-height: 1.85;
+    color: var(--ink-soft); margin-top: auto; padding-top: 22px;
+  }
+  @media (max-width: 880px) {
+    .reel { min-height: 0; padding: 26px 22px 22px; }
+    .reel .num { font-size: 3.4rem; }
+  }
+
+  /* ===== Sections ===== */
+  section { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+  .kicker {
+    display: inline-block; font-size: .8rem; font-weight: 800;
+    letter-spacing: .18em; color: var(--ink); opacity: .7;
+  }
+  .kicker::before { content: "▎ "; color: var(--pink); }
+  h2.section-h {
+    font-size: clamp(1.8rem, 6vw, 3rem); font-weight: 900; line-height: 1.05;
+    letter-spacing: -.03em; margin-top: 10px;
+  }
+  h2.section-h span.hl { background: var(--yellow); padding: 0 8px; }
+  .sub { margin-top: 14px; font-weight: 600; font-size: 1rem; max-width: 620px; }
+
+  /* ===== Bento / 5 features ===== */
+  .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; margin-top: 38px; }
+  @media (max-width: 900px) { .bento { grid-template-columns: 1fr 1fr; } }
+  .bento .cell {
+    background: var(--card); border: 2px solid var(--ink);
+    border-radius: 18px; padding: 22px 18px; position: relative;
+    box-shadow: 4px 4px 0 var(--ink);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .bento .cell:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--ink); }
+  .bento .c1 { grid-column: span 3; background: var(--lime); }
+  .bento .c2 { grid-column: span 2; background: var(--pink); color: #fff; }
+  .bento .c3 { grid-column: span 1; background: var(--yellow); text-align: center; }
+  .bento .c4 { grid-column: span 2; background: var(--card); }
+  .bento .c5 { grid-column: span 3; background: var(--ink); color: var(--yellow); }
+  .bento .c6 { grid-column: span 1; background: var(--blue); color: #fff; text-align: center; }
+  @media (max-width: 900px) {
+    .bento .cell { grid-column: span 1 !important; }
+  }
+  .cell .num {
+    font-size: 2.6rem; font-weight: 900; line-height: 1;
+    margin-bottom: 6px; letter-spacing: -.04em;
+  }
+  .cell h3 { font-size: 1.05rem; font-weight: 900; margin-bottom: 6px; }
+  .cell p { font-size: .82rem; font-weight: 600; opacity: .92; }
+  .cell .big { font-size: 2.6rem; font-weight: 900; line-height: 1; }
+  .cell .big small { display: block; font-size: .8rem; font-weight: 700; margin-top: 4px; opacity: .8; }
+
+  /* ===== Concept ===== */
+  .concept {
+    background: var(--card); border: 3px solid var(--ink);
+    border-radius: 28px; padding: 36px 28px; margin-top: 38px;
+    box-shadow: 8px 8px 0 var(--yellow);
+  }
+  .concept-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;
+  }
+  @media (max-width: 760px) { .concept-grid { grid-template-columns: 1fr; } }
+  .concept h3 { font-size: 1.8rem; font-weight: 900; line-height: 1.1; letter-spacing: -.02em; }
+  .concept ul { list-style: none; margin-top: 18px; }
+  .concept li {
+    padding: 10px 0; border-bottom: 1px dashed #ddd; font-weight: 700;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .concept li::before { content: "✓"; color: var(--pink); font-weight: 900; }
+  .concept-quote {
+    background: var(--ink); color: var(--yellow);
+    border-radius: 18px; padding: 28px 24px; font-size: 1.4rem;
+    font-weight: 900; line-height: 1.25; letter-spacing: -.01em;
+  }
+  .concept-quote span { color: var(--pink); }
+
+  /* ===== Event card ===== */
+  .ticket {
+    background: var(--card); border: 3px solid var(--ink);
+    border-radius: 28px; padding: 36px 28px; margin-top: 38px;
+    box-shadow: 8px 8px 0 var(--ink);
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px;
+
+  }
+  @media (max-width: 760px) { .ticket { grid-template-columns: 1fr; } }
+  .ticket .label { font-size: .8rem; font-weight: 800; letter-spacing: .18em; color: var(--pink); }
+  .ticket .value {
+    font-size: clamp(2rem, 7vw, 3.4rem); font-weight: 900; line-height: 1.05;
+    letter-spacing: -.03em; margin-top: 4px;
+  }
+  .ticket .sub { font-size: .9rem; font-weight: 700; margin-top: 6px; opacity: .8; }
+  .ticket-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 18px; }
+  .ticket-grid .row { padding: 10px 0; border-bottom: 1px dashed #ccc; font-size: .92rem; }
+  .ticket-grid .row b { display: block; font-size: .75rem; font-weight: 800; opacity: .6; letter-spacing: .1em; }
+  .ticket-right {
+    background: var(--yellow); border-radius: 20px; padding: 26px 22px;
+    text-align: center; display: flex; flex-direction: column; justify-content: center;
+    border: 2px solid var(--ink);
+  }
+  .ticket-right .price {
+    font-size: 3.2rem; font-weight: 900; line-height: 1;
+    letter-spacing: -.03em; color: var(--ink);
+  }
+  .ticket-right .price small { font-size: 1rem; font-weight: 900; }
+  .ticket-right .per { font-size: .85rem; font-weight: 700; margin-top: 4px; }
+  .ticket-right .cta {
+    margin-top: 18px; background: var(--ink); color: #fff;
+    padding: 12px 0; border-radius: 12px; font-weight: 900;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .ticket-right .placeholder {
+    font-size: .72rem; opacity: .65; margin-top: 12px;
+  }
+  .ticket .note {
+    margin-top: 16px; padding: 12px 16px; background: var(--lime);
+    border-radius: 12px; font-size: .82rem; font-weight: 700;
+  }
+
+  /* ===== Schedule ===== */
+  .timeline { margin-top: 38px; list-style: none; }
+  .timeline li {
+    display: grid; grid-template-columns: 110px 1fr; gap: 20px;
+    padding: 18px 0; border-bottom: 1px solid #e0dccf;
+  }
+  .timeline .t-time {
+    font-size: 1.3rem; font-weight: 900; color: var(--pink); letter-spacing: -.02em;
+  }
+  .timeline h4 { font-weight: 900; font-size: 1.05rem; }
+  .timeline p { font-size: .88rem; opacity: .8; margin-top: 2px; font-weight: 600; }
+
+  /* ===== Voices ===== */
+  .voices { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin-top: 30px; }
+  .voice {
+    background: var(--card); border: 2px solid var(--ink);
+    border-radius: 16px; padding: 18px 16px;
+    box-shadow: 4px 4px 0 var(--yellow);
+  }
+  .voice .who { font-weight: 900; font-size: .92rem; }
+  .voice .who small { display: block; font-weight: 600; font-size: .75rem; opacity: .6; margin-top: 2px; }
+  .voice .q { font-size: .88rem; font-weight: 700; margin-top: 10px; }
+  .voice .a { font-size: .85rem; font-weight: 600; margin-top: 8px; }
+  .voice .stars { color: var(--pink); font-weight: 900; margin-top: 8px; font-size: .9rem; }
+  .voice-note {
+    margin-top: 14px; font-size: .75rem; opacity: .6; font-weight: 600;
+  }
+
+  /* ===== FAQ ===== */
+  .faq { list-style: none; margin-top: 32px; }
+  .faq li {
+    background: var(--card); border: 2px solid var(--ink);
+    border-radius: 14px; margin-bottom: 10px; overflow: hidden;
+  }
+  .faq .q-btn {
+    width: 100%; text-align: left; background: none; border: 0;
+    font-size: 1rem; font-weight: 900; padding: 16px 20px; color: var(--ink);
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer;
+  }
+  .faq .q-btn::after { content: "+"; font-size: 1.4rem; font-weight: 900; color: var(--pink); }
+  .faq .q-btn.open::after { content: "−"; }
+  .faq .a-wrap { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
+  .faq .a { padding: 0 20px 18px; font-size: .9rem; font-weight: 600; color: var(--ink-soft); }
+  .faq-note { margin-top: 14px; font-size: .75rem; opacity: .55; font-weight: 600; }
+
+  /* ===== Footer ===== */
+  footer {
+    background: var(--ink); color: #fff; padding: 50px 20px 30px;
+    margin-top: 70px;
+  }
+  .foot-grid {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 30px;
+  }
+  @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr; } }
+  .foot-logo { font-size: 1.6rem; font-weight: 900; }
+  .foot-logo span { color: var(--yellow); }
+  .foot p { margin-top: 10px; font-size: .85rem; opacity: .8; font-weight: 600; }
+  .foot h4 { font-size: .8rem; letter-spacing: .18em; color: var(--pink); font-weight: 900; }
+  .foot ul { list-style: none; margin-top: 10px; }
+  .foot li { padding: 4px 0; font-size: .88rem; font-weight: 700; opacity: .9; }
+  .foot li.placeholder { opacity: .45; }
+  .copy {
+    text-align: center; margin-top: 40px; padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,.15); font-size: .78rem; opacity: .6;
+  }
+
+  /* ===== Sticky CTA (mobile) ===== */
+  .sticky-cta {
+    display: none; position: fixed; bottom: 14px; left: 16px; right: 16px; z-index: 90;
+    background: var(--ink); color: #fff; padding: 14px 18px; border-radius: 16px;
+    font-weight: 900; font-size: .95rem; align-items: center; justify-content: space-between;
+    box-shadow: 0 8px 24px rgba(0,0,0,.3); border: 2px solid var(--yellow);
+  }
+  .sticky-cta .lbl { display: flex; flex-direction: column; line-height: 1.15; }
+  .sticky-cta .lbl small { font-weight: 700; opacity: .8; font-size: .7rem; }
+  .sticky-cta .lbl b { font-size: 1rem; }
+  .sticky-cta .go {
+    background: var(--yellow); color: var(--ink); padding: 8px 14px; border-radius: 10px;
+    font-weight: 900; font-size: .85rem;
+  }
+  @media (max-width: 640px) { .sticky-cta { display: flex; } }
+
+  /* ===== Reveal animation ===== */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .marquee-track { animation: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== Marquee ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>言葉は要らない</span>
+    <span>言葉は要らない</span>
+    <span>日本語も英語もOK</span>
+    <span>日本語も英語もOK</span>
+    <span>心でつながる2時間</span>
+    <span>心でつながる2時間</span>
+    <span>12.27 都内で開催</span>
+    <span>12.27 都内で開催</span>
+    <span>言葉は要らない</span>
+    <span>言葉は要らない</span>
+    <span>日本語も英語もOK</span>
+    <span>日本語も英語もOK</span>
+    <span>心でつながる2時間</span>
+    <span>心でつながる2時間</span>
+    <span>12.27 都内で開催</span>
+    <span>12.27 都内で開催</span>
+  </div>
+</div>
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="header-inner">
+    <a href="#top" class="logo">Silent<span>Connect</span></a>
+    <nav>
+      <ul>
+        <li><a href="#features">特徴</a></li>
+        <li><a href="#how">当日の流れ</a></li>
+        <li><a href="#event">開催情報</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<div class="hero" id="top">
+  <span class="hero-tag">NON-VERBAL EXCHANGE PROGRAM</span>
+  <h1>
+    <span class="s1">言葉は</span><br>
+    <span class="s2">要らない</span><span class="s3">。</span>
+  </h1>
+  <p>日本語も英語も、いりません。<br>
+    ジェスチャー・表情・協力でつながる、<mark>新感覚の国際交流</mark>。</p>
+  <div class="hero-meta">
+    <span class="chip pink">📅 12.27 (SUN)</span>
+    <span class="chip lime">📍 都内</span>
+    <span class="chip">🎟️ ¥1,000</span>
+  </div>
+  <div class="hero-cta">
+    <a href="#event" class="btn">チケットを申し込む <span class="arrow">→</span></a>
+    <a href="#features" class="btn alt">5つの特徴 <span class="arrow">↘</span></a>
+  </div>
+</div>
+
+<!-- ===== Editorial pick cards ===== -->
+<div class="reels">
+  <div class="reel r1 reveal">
+    <div class="top-row">
+      <span class="top-label">01 — Friends</span>
+      <span class="badge live">Live</span>
+    </div>
+    <div class="num">01</div>
+    <h3>国籍より、<br>ノリでつながる。</h3>
+    <p>ジェスチャー1つで、笑いのツボが同じになる瞬間。</p>
+  </div>
+  <div class="reel r2 reveal">
+    <div class="top-row">
+      <span class="top-label">02 — Solo</span>
+      <span class="badge live">Live</span>
+    </div>
+    <div class="num">02</div>
+    <h3>一人参加、<br>それがデフォルト。</h3>
+    <p>チーム制で始められるから、孤立しない設計。</p>
+  </div>
+  <div class="reel r3 reveal">
+    <div class="top-row">
+      <span class="top-label">03 — No Talk</span>
+      <span class="badge new">New</span>
+    </div>
+    <div class="num">03</div>
+    <h3>話さないから、<br>フラット。</h3>
+    <p>日本語ネイティブも留学生も、同じルールで対等。</p>
+  </div>
+</div>
+
+<!-- ===== Features ===== -->
+<section id="features">
+  <div class="reveal">
+    <span class="kicker">FEATURES</span>
+    <h2 class="section-h">5つの<span class="hl">特徴</span></h2>
+    <p class="sub">「行きたいけど勇気が出ない」をゼロにする設計。</p>
+  </div>
+  <ol class="bento reveal">
+    <li class="cell c1">
+      <div class="num">01</div>
+      <h3>英語が苦手でも、参加できる</h3>
+      <p>無理に話さなくてもジェスチャーや絵、協力で伝え合える。気疲れゼロでOK。</p>
+    </li>
+    <li class="cell c2">
+      <div class="num">02</div>
+      <h3>1人参加でも安心</h3>
+      <p>最初からチーム制。自然にグループに溶け込める設計。</p>
+    </li>
+    <li class="cell c3">
+      <div class="big">👫</div>
+    </li>
+    <li class="cell c4">
+      <div class="num">03</div>
+      <h3>日本人と留学生が対等</h3>
+      <p>「話せる側／話せない側」の差がない。全員同じルール。</p>
+    </li>
+    <li class="cell c5">
+      <div class="num">04</div>
+      <h3>会話力より<small style="opacity:.7; font-size:.8rem; display:block; margin-top:2px;">体験の共有</small></h3>
+      <p>笑い・驚き・協力の瞬間そのものがコミュニケーション。</p>
+    </li>
+    <li class="cell c6">
+      <div class="big">🎉</div>
+    </li>
+    <li class="cell c4" style="grid-column: span 6; background: var(--card);">
+      <div class="num">05</div>
+      <h3>誰もが楽しめる、安心の設計</h3>
+      <p>シャイな学生、これまで国際交流に踏み出せなかった学生も大丈夫。心理的ハードルが低い場。</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ===== Concept ===== -->
+<section>
+  <div class="concept reveal">
+    <div class="concept-grid">
+      <div>
+        <span class="kicker">CONCEPT</span>
+        <h3 style="margin-top:10px;">言葉じゃなくて、<br>心でつながる。</h3>
+        <ul>
+          <li>英語に自信はないけど、外国人の友だちを作りたい</li>
+          <li>一人参加でも安心して楽しめるイベントがいい</li>
+          <li>留学生や日本人と自然につながりたい</li>
+        </ul>
+      </div>
+      <div class="concept-quote">
+        「話せる／話せない」の<br>
+        壁を<span>ゼロ</span>にする。<br>
+        笑いの瞬間に生まれる、<br>
+        記憶に残るつながり。
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Event ===== -->
+<section id="event">
+  <div class="reveal">
+    <span class="kicker">EVENT</span>
+    <h2 class="section-h">開催情報</h2>
+    <p class="sub">詳細決まり次第、順次アップデートします。</p>
+  </div>
+  <div class="ticket reveal">
+    <div>
+      <span class="label">NEXT EVENT</span>
+      <div class="value">12月27日（日）</div>
+      <div class="sub">※ 次回以降の開催も検討中</div>
+      <div class="ticket-grid">
+        <div class="row"><b>TIME</b>16:30 〜 18:30</div>
+        <div class="row"><b>PLACE</b>都内（詳細は後日告知）</div>
+        <div class="row"><b>ACCESS</b>詳細は後日告知</div>
+        <div class="row"><b>PRICE</b>¥1,000 / 人</div>
+      </div>
+      <div class="note">
+        🎟️ 初めての人も大歓迎！ 友だちと一緒に参加もOK♪<br>
+      💳 事前決済（Google Form）推奨／当日現金もご利用いただけます。<br>
+        🕐 受付開始・会場アクセスは詳細決まり次第更新します。
+      </div>
+    </div>
+    <div class="ticket-right">
+      <div class="per" style="font-weight:900;">チケット代</div>
+      <div class="price">¥1,000<small> / 人</small></div>
+      <div style="font-size:.8rem; font-weight:700; margin-top:10px; opacity:.7;">事前決済（Google Form）推奨<br>当日現金もOK</div>
+      <a href="#" class="cta">事前申込（Google Form）→</a>
+      <div class="placeholder">※ Form URL確定後差し替え予定</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Schedule ===== -->
+<section id="how">
+  <div class="reveal">
+    <span class="kicker">SCHEDULE</span>
+    <h2 class="section-h">当日の<span class="hl">流れ</span></h2>
+    <p class="sub">2時間で、はじめての人ともゼロからチームでつながります。</p>
+  </div>
+  <ul class="timeline reveal">
+    <li>
+      <div class="t-time">16:00</div>
+      <div><h4>受付・チーム分け</h4><p>チェックイン後、4〜6名のチームに分かれます。</p></div>
+    </li>
+    <li>
+      <div class="t-time">16:30</div>
+      <div><h4>オープニング・アイスブレイク</h4><p>ジェスチャーゲームを交えて、空気をつくります。</p></div>
+    </li>
+    <li>
+      <div class="t-time">17:00</div>
+      <div><h4>メインアクティビティ</h4><p>絵しりとりや共同ミッションなど、言葉なしで協力する体験型ワーク。</p></div>
+    </li>
+    <li>
+      <div class="t-time">18:00</div>
+      <div><h4>振り返り・交流会</h4><p>チームや全体で今日の体験を共有。連絡先交換もOK。</p></div>
+    </li>
+    <li>
+      <div class="t-time">18:30</div>
+      <div><h4>終了</h4><p>みんなで最高の時間をつくりましょう！</p></div>
+    </li>
+  </ul>
+</section>
+
+<!-- ===== Voices ===== -->
+<section>
+  <div class="reveal">
+    <span class="kicker">VOICES</span>
+    <h2 class="section-h">参加者の<span class="hl">声</span></h2>
+    <p class="sub">※ サンプル文言。実際のコメントに差し替えてください。</p>
+  </div>
+  <div class="voices reveal">
+    <div class="voice">
+      <div class="who">大学生・20代<small>初参加 / 一人で来訪</small></div>
+      <div class="q">「話せない不安、なくなった」</div>
+      <div class="a">チーム制だから自然と打ち解けられた。終わった頃には連絡先交換していて驚いた。</div>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div class="voice">
+      <div class="who">留学生・20代<small>参加2回目</small></div>
+      <div class="q">「言語の壁を忘れられた」</div>
+      <div class="a">日本語が下手でも問題なく楽しめた。日本人のみなさんとたくさん笑えた。</div>
+      <div class="stars">★★★★★</div>
+    </div>
+    <div class="voice">
+      <div class="who">院生・20代<small>国際交流初めて</small></div>
+      <div class="q">「また来たいと思った」</div>
+      <div class="a">意外とディープな話もできた。雰囲気を作ってくれてる運営がすごい。</div>
+      <div class="stars">★★★★☆</div>
+    </div>
+  </div>
+  <p class="voice-note">※「90%が一人参加」「★評価」等は仮置きです。実データが出たら差し替えてください。</p>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="reveal">
+    <span class="kicker">FAQ</span>
+    <h2 class="section-h">よくある質問</h2>
+  </div>
+  <ul class="faq reveal">
+    <li>
+      <button class="q-btn">本当に話さなくていいの？</button>
+      <div class="a-wrap"><div class="a">ジェスチャー・表情・描画などのツールを使います。発話は任意で、強制は一切ありません。</div></div>
+    </li>
+    <li>
+      <button class="q-btn">一人で参加しても大丈夫？</button>
+      <div class="a-wrap"><div class="a">チーム制で運営するため、自然にグループに溶け込めます。過去の参加者も大半が一人参加です（数値は確認後更新予定）。</div></div>
+    </li>
+    <li>
+      <button class="q-btn">英語が全然できなくてもOK？</button>
+      <div class="a-wrap"><div class="a">全員同じ非言語ルールで体験するので、英語力は不要です。</div></div>
+    </li>
+    <li>
+      <button class="q-btn">途中退出できる？</button>
+      <div class="a-wrap"><div class="a">スタッフまで一声いただければいつでも退出可能です。</div></div>
+    </li>
+    <li>
+      <button class="q-btn">服装・持ち物は？</button>
+      <div class="a-wrap"><div class="a">動きやすい服装でOK。持ち物は特に必要ありません。会場の詳細は後日告知します。</div></div>
+    </li>
+  </ul>
+  <p class="faq-note">※ 内容や数値データは仮置きです。事実確認のうえ差し替えてください。</p>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot">
+      <div class="foot-logo">Silent<span>Connect</span></div>
+      <p>言葉は要らない国際交流。言葉じゃなくて、心でつながる2時間をつくります。<br><span style="opacity:.7; font-size:.8rem;">主催：SilentConnect</span></p>
+    </div>
+    <div class="foot">
+      <h4>SOCIAL</h4>
+      <ul>
+        <li>📷 Instagram <small style="opacity:.6; font-size:.75rem;">→ URL差し替え予定</small></li>
+        <li>🎵 TikTok <small style="opacity:.6; font-size:.75rem;">→ URL差し替え予定</small></li>
+        <li>🐦 X (Twitter) <small style="opacity:.6; font-size:.75rem;">→ URL差し替え予定</small></li>
+      </ul>
+    </div>
+    <div class="foot">
+      <h4>ORGANIZER</h4>
+      <ul>
+        <li style="font-weight:900; font-size:1rem;">SilentConnect</li>
+        <li style="opacity:.7; font-size:.85rem;">主催</li>
+        <li class="placeholder">チケットURL（Google Form準備中）</li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">© 2026 SilentConnect. All rights reserved.</div>
+</footer>
+
+<!-- ===== Sticky CTA ===== -->
+<a href="#event" class="sticky-cta">
+  <div class="lbl">
+    <small>NEXT EVENT</small>
+    <b>12.27 都内 / ¥1,000</b>
+  </div>
+  <div class="go">申し込む →</div>
+</a>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq .q-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const wrap = btn.nextElementSibling;
+      const isOpen = btn.classList.toggle('open');
+      wrap.style.maxHeight = isOpen ? wrap.scrollHeight + 'px' : '0px';
+    });
+  });
+
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
